@@ -1,0 +1,9 @@
+.player-bar-container {
+  display: flex;
+  height: 100px;
+  background-color: #383838;
+}
+
+.player-bar-container>p {
+  color: white;
+}

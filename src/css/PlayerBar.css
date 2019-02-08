@@ -1,9 +1,32 @@
 .player-bar-container {
   display: flex;
-  height: 100px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
   background-color: #383838;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .player-bar-container>p {
   color: white;
+}
+
+.player-bar-styles {
+  color: #B3B3B3;
+}
+
+.play-pause {
+  font-size: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.backward-forward {
+  font-size: 20px;
 }

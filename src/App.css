@@ -5,3 +5,7 @@ body {
 .App {
   display: flex;
 }
+
+.loading {
+  color: #FFFFFF;
+}

@@ -10,7 +10,9 @@ class MainView extends Component {
         <Songs
           tracks={ this.props.tracks }
         />
-        <PlayerBar />
+        <PlayerBar
+          songIsPlaying={ this.props.songIsPlaying }
+        />
       </div>
     );
   }

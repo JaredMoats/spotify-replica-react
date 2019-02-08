@@ -14,7 +14,8 @@ class App extends Component {
       activePlaylist: "",
       activePlaylistIndex: null,
       activeAlbumImage: null,
-      activeTrack: null
+      activeTrack: null,
+      songIsPlaying: false
     };
   }
 
@@ -87,16 +88,13 @@ class App extends Component {
   }
 
   /* Attached to the playlists in the Playlists component. Keeps
-  track of the playlist id the user wants to see.*/
+  track of the playlist id the user wants to see, and calls a function
+  to retrieve the playlist's tracks*/
   setActivePlaylist(playlist, index) {
     this.setState({activePlaylist: playlist.id, activePlaylistIndex: index, test: index});
 
     /* Called after the active playlist is setState */
     this.getTracks();
-  }
-
-  logPlaylistData() {
-    console.log(`From logPlaylistData(): ${this.state.playlists}`);
   }
 
   render() {
@@ -113,10 +111,11 @@ class App extends Component {
             playlists={ this.state.playlists }
           />
           :
-          <h4>Loading...</h4>
+          <h4 className="loading">Loading...</h4>
         }
         <MainView
           tracks={ this.state.tracks }
+          songIsPlaying={ this.state.songIsPlaying }
         />
       </div>
     );

@@ -1,0 +1,29 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  background-color: #101010;
+  width: 200px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar a {
+  text-decoration: none;
+}
+
+.sidebar a:hover h4 {
+  color: #FFFFFF;
+}
+
+.sidebar h4 {
+  color: #807E83;
+  padding: 0;
+  margin-bottom: 5px;
+  padding-right: 10px;
+}
+
+.active {
+  color: #FFFFFF;
+  border-left: 2px solid green;
+}

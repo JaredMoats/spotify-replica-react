@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Playlists from './components/Playlists';
 import MainView from './components/MainView';
+import Playlists from './components/Playlists';
+import SideBar from './components/SideBar';
 import queryString from 'query-string';
 import './App.css';
 
@@ -8,14 +9,15 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      displayName: '',
-      playlists: null,
-      tracks: null,
+      activeAlbumImage: null,
       activePlaylist: "",
       activePlaylistIndex: null,
-      activeAlbumImage: null,
       activeTrack: null,
-      songIsPlaying: false
+      browse: null,
+      displayName: '',
+      playlists: null,
+      songIsPlaying: false,
+      tracks: null
     };
   }
 
@@ -62,6 +64,10 @@ class App extends Component {
     return accessToken;
   }
 
+  getBrowse() {
+
+  }
+
   /* Retrieves a playlist's tracks after the playlist is chosen.  */
   getTracks() {
 
@@ -78,7 +84,7 @@ class App extends Component {
 
           this.setState({tracks: trackData});
       })
-    }, 100);
+    }, 100); //ensures an activeplaylist is set before the tracks are fetched
   }
 
   /* Attached to the playlists in the Playlists component. Keeps
@@ -98,7 +104,7 @@ class App extends Component {
         {
           this.state.playlists
           ?
-          <Playlists
+          <SideBar
             activePlaylist={ this.state.activePlaylist }
             activePlaylistIndex={ this.state.activePlaylistIndex }
             getTracks={ () => this.getTracks() }

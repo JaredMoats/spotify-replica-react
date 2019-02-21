@@ -1,31 +1,6 @@
 .playlists {
   display: flex;
   flex-direction: column;
-  padding-left: 30px;
-  background-color: #101010;
-  width: 200px;
-  height: 100vh;
-  overflow-y: auto;
-}
-
-.playlists a {
-  text-decoration: none;
-}
-
-.playlists a:hover h4 {
-  color: #FFFFFF;
-}
-
-.playlists h4 {
-  color: #807E83;
-  padding: 0;
-  margin-bottom: 5px;
-  padding-right: 10px;
-}
-
-.active {
-  color: #FFFFFF;
-  border-left: 2px solid green;
 }
 
 #playlist-label {

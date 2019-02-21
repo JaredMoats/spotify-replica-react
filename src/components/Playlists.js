@@ -4,10 +4,6 @@ import '../css/playlists.css';
 class Playlists extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      activePlaylist: null
-    };
   }
 
   render() {
@@ -16,6 +12,7 @@ class Playlists extends Component {
     return(
       <div className='playlists'>
         <h4 id='playlist-label'>Playlists</h4>
+        {/* Map through the playlists */}
         {this.props.playlists
           ?
           (this.props.playlists.items.map((playlist, index)=>

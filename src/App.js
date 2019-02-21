@@ -64,12 +64,9 @@ class App extends Component {
 
   /* Retrieves a playlist's tracks after the playlist is chosen.  */
   getTracks() {
-    console.log('getTracks() triggered')
 
-    let accessToken = this.getAccessToken();
-
-    /* Wait 100ms for activePlaylist state to update */
     setTimeout(() => {
+      let accessToken = this.getAccessToken();
       let theTrackId = 'https://api.spotify.com/v1/playlists/' + this.state.activePlaylist + '/tracks';
 
       fetch(theTrackId, {
@@ -82,9 +79,6 @@ class App extends Component {
           this.setState({tracks: trackData});
       })
     }, 100);
-
-    /*let myTrackId = this.state.playlists.items[0].id;
-    console.log('From getTracks(): Your playlist id: ' + myTrackId);*/
   }
 
   /* Attached to the playlists in the Playlists component. Keeps
@@ -107,6 +101,7 @@ class App extends Component {
           <Playlists
             activePlaylist={ this.state.activePlaylist }
             activePlaylistIndex={ this.state.activePlaylistIndex }
+            getTracks={ () => this.getTracks() }
             setActivePlaylist={ (playlist, index) => this.setActivePlaylist(playlist, index) }
             playlists={ this.state.playlists }
           />
